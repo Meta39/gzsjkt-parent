@@ -41,6 +41,7 @@
     <modules>
         <!-- 子模块路径 -->
         <module>gzsjkt-api</module>
+        <module>gzsjkt-datp</module>
     </modules>
 
     <properties>
