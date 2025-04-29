@@ -11,7 +11,7 @@ import java.time.LocalDateTime;
  */
 @Data
 @JacksonXmlRootElement(localName = "req")
-public class RefundPayReq {
+public final class RefundPayReq {
     /**
      * 医院代码
      */

@@ -11,7 +11,7 @@ import java.time.LocalDate;
  */
 @Data
 @JacksonXmlRootElement(localName = "req")
-public class DocRegUpdateReq {
+public final class DocRegUpdateReq {
 
     /**
      * 医院代码

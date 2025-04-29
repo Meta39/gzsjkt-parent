@@ -15,7 +15,7 @@ import java.time.LocalTime;
 @Data
 @EqualsAndHashCode(callSuper = true)
 @JacksonXmlRootElement(localName = "res")
-public class OrderQueryRes extends Res {
+public final class OrderQueryRes extends Res {
 
     /**
      * 诊疗平台订单号

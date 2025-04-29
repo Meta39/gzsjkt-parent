@@ -11,7 +11,7 @@ import java.time.LocalDateTime;
  */
 @Data
 @JacksonXmlRootElement(localName = "req")
-public class PayOrderByHisReq {
+public final class PayOrderByHisReq {
 
     /**
      * 诊疗平台的订单号

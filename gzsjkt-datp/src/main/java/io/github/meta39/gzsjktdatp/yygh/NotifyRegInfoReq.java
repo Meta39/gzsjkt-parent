@@ -8,7 +8,7 @@ import lombok.Data;
  */
 @Data
 @JacksonXmlRootElement(localName = "req")
-public class NotifyRegInfoReq {
+public final class NotifyRegInfoReq {
 
     /**
      * 医院代码

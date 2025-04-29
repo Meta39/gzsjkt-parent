@@ -12,7 +12,7 @@ import java.time.LocalDateTime;
  */
 @Data
 @JacksonXmlRootElement(localName = "req")
-public class PrintRegInfoReq {
+public final class PrintRegInfoReq {
     /**
      * 医院代码
      */
