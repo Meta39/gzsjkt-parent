@@ -1,0 +1,91 @@
+<project>
+    <!-- 直接继承 spring-boot-starter-parent，它会自动管理依赖和插件版本 -->
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>3.4.4</version>
+        <relativePath/>
+    </parent>
+
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>io.github.meta39</groupId>
+    <artifactId>gzsjkt-parent</artifactId>
+    <version>${revision}</version>
+    <packaging>pom</packaging>
+    <name>${project.groupId}:${project.artifactId}</name>
+    <description>A application used as gzsjkt parent.</description>
+    <url>https://github.com/Meta39/gzsjkt-parent</url>
+
+    <licenses>
+        <license>
+            <name>The Apache License, Version 2.0</name>
+            <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+        </license>
+    </licenses>
+
+    <developers>
+        <developer>
+            <name>Meta39</name>
+            <email>97meta@gmail.com</email>
+            <organization>None</organization>
+            <organizationUrl>https://github.com/Meta39</organizationUrl>
+        </developer>
+    </developers>
+
+    <scm>
+        <connection>scm:git:git://github.com/Meta39/gzsjkt-parent.git</connection>
+        <developerConnection>scm:git:ssh://github.com/Meta39/gzsjkt-parent.git</developerConnection>
+        <url>http://github.com/Meta39/gzsjkt-parent/tree/main</url>
+    </scm>
+
+    <modules>
+        <!-- 子模块路径 -->
+        <module>gzsjkt-api</module>
+    </modules>
+
+    <properties>
+        <!-- 定义版本属性 -->
+        <revision>1.0.2</revision>
+        <maven-gpg-plugin.version>3.2.7</maven-gpg-plugin.version>
+        <central-publishing-maven-plugin.version>0.7.0</central-publishing-maven-plugin.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <java.version>21</java.version>
+        <maven.compiler.source>${java.version}</maven.compiler.source>
+        <maven.compiler.target>${java.version}</maven.compiler.target>
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+        </dependencies>
+    </dependencyManagement>
+
+    <build>
+        <pluginManagement>
+            <plugins>
+                <!--
+                    查看版本号：Ctrl + 鼠标单击 spring-boot-starter-parent =》 Ctrl + 鼠标单击 spring-boot-dependencies
+                    就可以查看 Spring Boot 内置的版本号了。没有的版本号需要自己手动添加。
+                    如：maven-gpg-plugin、central-publishing-maven-plugin等。
+                    如果 Maven 没有写版本号，那么用的就是 Spring Boot 内置的版本号。
+                    按 Spring Boot 内置的版本号格式写，如：<maven-compiler-plugin.version>3.14.0</maven-compiler-plugin.version>
+                    配到 properties ，然后在下面引入版本号即可，如果不想使用自己的配置的版本号，直接删除版本号就能用 Spring Boot 内置的版本号了。
+                    推荐使用 Spring Boot 内置的版本号！
+                -->
+                <!-- Maven插件：gpg[本地电脑还需安装gpg] -->
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-gpg-plugin</artifactId>
+                    <version>${maven-gpg-plugin.version}</version>
+                </plugin>
+                <!-- Maven 插件：发布 -->
+                <plugin>
+                    <groupId>org.sonatype.central</groupId>
+                    <artifactId>central-publishing-maven-plugin</artifactId>
+                    <version>${central-publishing-maven-plugin.version}</version>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+    </build>
+
+</project>
